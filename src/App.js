@@ -1,25 +1,38 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
 
-function App() {
+import { Redirect, Route, Switch } from 'react-router-dom';
+
+import HomePage from './Pages/HomePage';
+
+
+import './App.scss';// all shared styles in this file
+import SecondPage from './Pages/SecondPage';
+import VideoPage from './Pages/VideoPage';
+
+
+
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    //div app contain all pages same background
+    <div className='app'>
+      {/* switch to organize the routes */}
+      <Switch>
+        <Route exact path='/'>
+          <HomePage />
+        </Route>
+        <Route  path='/second-page'>
+          <SecondPage />
+        </Route>
+        <Route  path='/video-page'>
+          <VideoPage />
+        </Route>
+        
+        <Redirect to='/' />
+
+      </Switch>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App

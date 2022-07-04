@@ -1,0 +1,12 @@
+.carousel-nav{
+    width: 100%;
+    display: flex;
+    background-color: var(--primary-color);
+    margin-top: 10px;
+    .container{
+        width: 100%;
+        display: flex;
+        justify-content: flex-end; //to show navigation on the right side
+        gap: 20px;
+    }
+}
